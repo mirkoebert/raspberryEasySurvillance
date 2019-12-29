@@ -1,6 +1,12 @@
 #!/bin/bash
 
-sleep $1
+if [ -z "$1" ]
+  then
+    echo "No sleep time given."
+else
+    sleep $1
+fi
+
 cd /home/pi/survillance
 
 ./getImage.sh
