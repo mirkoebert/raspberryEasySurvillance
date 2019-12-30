@@ -25,8 +25,10 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Compare last two normalized imges
 
 ## Performance
+* Better take a Raspberry Pi 4 or better
+* One complete run takes 23 seconds. This mean 2 imaged per minute.
 
 ## Links
-*
+* [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
 *
 
