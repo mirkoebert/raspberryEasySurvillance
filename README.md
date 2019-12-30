@@ -20,8 +20,9 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
   * `crontab -e`
 
 ## Who it works.
-*
-*
+* Take a Photo
+* Normaize Image
+* Compare last two normalized imges
 
 ## Performance
 
