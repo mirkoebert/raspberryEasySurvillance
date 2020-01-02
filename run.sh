@@ -7,8 +7,9 @@ else
     sleep $1
 fi
 
-cd /home/pi/survillance
+cd /home/pi/raspberryEasySurvillance
 
 ./getImage.sh
+./normaize.sh
 ./detectMotion.sh
 

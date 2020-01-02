@@ -18,6 +18,8 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 ### Run Automatically
 * Add run.sh to cron
   * `crontab -e`
+* * * * * /home/pi/raspberryEasySurvillance/run.sh 0
+* * * * * /home/pi/raspberryEasySurvillance/run.sh 27 
 
 ## Who it works.
 * Take a Photo
@@ -26,7 +28,10 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 
 ## Performance
 * Better take a Raspberry Pi 4 or better
-* One complete run takes 23 seconds. This mean 2 imaged per minute.
+* Optimize normalization, reduce colorspace, use faster image format: 23 seconds / image
+* Reduce Image size, One complete run takes 23 seconds / image. This mean 2 images per minute.
+* Some optimizations: 75 seconds /image
+* First try, full image resolution: 90 sec / image
 
 ## Links
 * [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
