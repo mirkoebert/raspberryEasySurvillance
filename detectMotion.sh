@@ -2,13 +2,14 @@
 #set -x
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
+file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
 latestImage=`ls -r blur/*.mpc | head -n 1`
 
 
 val=$(compare  -fuzz 10% -metric RMSE $file2 $latestImage /dev/null 2>&1)
 
-
-#rm blur/$file2
+rm $file2
+rm $file2Cache
 val2=$(echo $val | awk '{print $1}')
 
 
