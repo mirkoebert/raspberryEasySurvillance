@@ -6,7 +6,7 @@ function prepare {
 	echo -----------------------------
 	echo `date` Test: $1 
 	rm -f cam/*.jpg
-	rm -f blur/*.jpg
+	rm -f blur/*.*
 	rm -f ftp/*.jpg
 	rm -f stateMotionDected
 }
