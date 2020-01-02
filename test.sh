@@ -1,4 +1,6 @@
 #!/bin/bash
+testDir=testPic1296x972_8-bit_sRGB
+#testDir=testPic1296x972_8-bit_gray
 
 function prepare {        
 	echo -----------------------------
@@ -19,9 +21,9 @@ function assertEquals {
 }
 
 prepare 1	
-cp testPic/image.jpg cam
+cp $testDir/image.jpg cam
 ./normaize.sh
-cp testPic/image2.jpg cam
+cp $testDir/image2.jpg cam
 ./normaize.sh
 
 result=$(./detectMotion.sh)
@@ -29,9 +31,9 @@ assertEquals "No Motion" "$result"
 
 
 prepare 2	
-cp testPic/image2.jpg cam
+cp $testDir/image2.jpg cam
 ./normaize.sh
-cp testPic/image3.jpg cam
+cp $testDir/image3.jpg cam
 ./normaize.sh
 
 result=$(./detectMotion.sh)
@@ -39,18 +41,18 @@ assertEquals "No Motion" "$result"
 
 
 prepare 3	
-cp testPic/image4.jpg cam
+cp $testDir/image4.jpg cam
 ./normaize.sh
-cp testPic/image3.jpg cam
+cp $testDir/image3.jpg cam
 ./normaize.sh
 
 result=$(./detectMotion.sh)
 assertEquals "No Motion" "$result"
 
 prepare 4	
-cp testPic/image4.jpg cam
+cp $testDir/image4.jpg cam
 ./normaize.sh
-cp testPic/image4X.jpg cam
+cp $testDir/image4X.jpg cam
 ./normaize.sh
 
 result=$(./detectMotion.sh)
