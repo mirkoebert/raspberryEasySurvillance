@@ -30,5 +30,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 
 ## Links
 * [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
+* [Achieving high frame rate with a Raspberry Pi camera system](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
 *
+
 
