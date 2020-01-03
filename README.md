@@ -38,7 +38,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 
 ### Details
 * take photo: 5.8 sec
-* normalize: ~~14.7 sec~~~ 5.4 sec
+* normalize: ~~14.7 sec~~ 5.4 sec
 * detect motion: 2.8 sec 
 
 ## Links
