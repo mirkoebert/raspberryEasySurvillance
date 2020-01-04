@@ -13,7 +13,7 @@ rm "$file2" "$file2Cache"
 latestImage=`ls -r cam/ | head -n 1`
 file2Image=`ls -r cam/ | head -n 2 | tail -n 1`
 FILE=stateMotionDected
-if [ "$val" -lt "1000" ]; then
+if [ "$val" -lt 1000 ]; then
    echo "No Motion";
 else
    if test -f "$FILE"; then
