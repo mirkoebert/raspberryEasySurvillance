@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 
 if [ -z "$1" ]
   then

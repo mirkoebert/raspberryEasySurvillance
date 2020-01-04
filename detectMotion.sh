@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 #set -x
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
@@ -24,7 +24,7 @@ else
    else
     echo "Motion detected"
     touch $FILE 
-    mv cam/$latestImage ftp/
+    cp cam/$latestImage ftp/
     mv cam/$file2Image ftp/
     exit;
    fi
