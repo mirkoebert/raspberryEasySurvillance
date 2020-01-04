@@ -29,14 +29,14 @@ rm "$file2" "$file2Cache"
 
 file2Image=`ls -r cam/ | head -n 2 | tail -n 1`
 if [ "$val" -lt 1000 ]; then
-   echo "No Motion";
+   #echo "No Motion";
 else
    FILE=stateMotionDected
    if test -f "$FILE"; then
-    echo "Motion ends"
+   # echo "Motion ends"
     rm "$FILE"
    else
-    echo "Motion detected"
+    #echo "Motion detected"
     touch $FILE 
     cp "cam/$DATE" "ftp/"
     mv "cam/$file2Image" "ftp/"
