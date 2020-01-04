@@ -28,9 +28,9 @@ file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
 rm "$file2" "$file2Cache"
 
 file2Image=`ls -r cam/ | head -n 2 | tail -n 1`
-if [ "$val" -lt 1000 ]; then
+if [ "$val" -gt 1000 ]; then
    #echo "No Motion";
-else
+#else
    FILE=stateMotionDected
    if test -f "$FILE"; then
    # echo "Motion ends"
