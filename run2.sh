@@ -1,9 +1,9 @@
 #!/bin/dash
 #set -x
-if [ -z "$1" ]
+if [ ! -z "$1" ]
   then
-    echo 'No sleep time given.'
-else
+    #echo 'No sleep time given.'
+#else
     sleep $1
 fi
 cd '/home/pi/raspberryEasySurvillance'
@@ -15,8 +15,8 @@ raspistill --width 1296 --height 972 --timeout 1  --nopreview -o cam/$DATE
 
 
 
-latestImage=`ls -r cam | head -n1`
-convert -colorspace LinearGray -normalize -blur 2x2  cam/$latestImage blur/$latestImage.mpc
+#latestImage=`ls -r cam | head -n1`
+convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE blur/$DATE.mpc
 
 
 
@@ -24,7 +24,8 @@ convert -colorspace LinearGray -normalize -blur 2x2  cam/$latestImage blur/$late
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
 file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
-latestImage=`ls -r blur/*.mpc | head -n 1`
+#latestImage=`ls -r blur/*.mpc | head -n 1`
+latestImage="blur/$DATE.mpc"
 
 
 val=$(compare  -fuzz 10% -metric AE $file2 $latestImage null 2>&1)
