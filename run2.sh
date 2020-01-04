@@ -20,7 +20,7 @@ convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE $latestNImage
 
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
-val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null 2>&1)
+val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null: 2>&1)
 
 file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
 rm "$file2" "$file2Cache"
