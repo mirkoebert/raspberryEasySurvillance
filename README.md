@@ -9,9 +9,8 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 
 ## Install
 * Install all dependencies
-  * `./install.sh`
+  * `apt-get install -y imagemagic`
   * Image Magic
-  * BC
 
 ## Run 
 ### Run Manually
