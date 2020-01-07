@@ -1,6 +1,12 @@
 # raspberryEasySurvillance
 Easy Survillance Camera Software for Raspberry Pi Zero W
 
+## Features
+* Runs on every Raspberry Pi
+* 1 MP resolution
+* No hidden backdoors, using only standard software
+* Resistant against Deauth WIFI attac
+
 ## Hardware
 * Raperry Pi Zero W
 * Cam Module without IR filter
