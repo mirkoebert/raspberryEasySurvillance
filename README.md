@@ -8,8 +8,10 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Resistant against Deauth WIFI attac
 
 ## Hardware
-* Raperry Pi Zero W
-* Cam Module without IR filter
+* Rsaperry Pi 
+  * Zero W
+  * Raspberry Pi 4
+* Cam Module (without IR filter)
 * Power supply: TODO
 * Case: TODO
 
@@ -34,6 +36,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Compare last two normalized imges
 
 ## Performance
+#### Raspberry Zero W
 * Better take a Raspberry Pi 4 or better
 * Set time out to 1: 9 sec / image
 * Reducing blur: 14 sec / image
@@ -43,6 +46,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * First try, full image resolution: 90 sec / image
 
 ### Details
+#### Raspberry Zero W
 * take photo: ~~5.8 sec~~ 0.7 sec
 * normalize: ~~14.7 sec~~ 5.4 sec
 * detect motion: 2.8 sec 
