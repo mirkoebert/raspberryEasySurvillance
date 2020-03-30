@@ -17,7 +17,7 @@ raspistill --width 1296 --height 972 --timeout 1  --nopreview -o cam/$DATE
 latestNImage="blur/$DATE.mpc"
 convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE $latestNImage
 
-if [ -z "$prevImage" ]; then
+if [ ! -z "$prevImage" ]; then
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
 val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null: 2>&1)
