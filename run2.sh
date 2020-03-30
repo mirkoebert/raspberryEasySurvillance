@@ -6,7 +6,7 @@ if [ ! -z "$1" ]
 fi
 cd '/home/pi/raspberryEasySurvillance'
 
-file2Image=`ls -r cam/ | head -n 1`
+prevImage=`ls -r cam/ | head -n 1`
 
 
 DATE=$(date +"%Y-%m-%d_%H%M%S").jpg
@@ -17,7 +17,7 @@ raspistill --width 1296 --height 972 --timeout 1  --nopreview -o cam/$DATE
 latestNImage="blur/$DATE.mpc"
 convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE $latestNImage
 
-
+if [ -z "$prevImage" ]; then
 
 file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
 val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null: 2>&1)
@@ -33,11 +33,13 @@ if [ "$val" -gt 1000 ]; then
    else
     touch $FILE 
     cp "cam/$DATE" "ftp/"
-    mv "cam/$file2Image" "ftp/"
+    mv "cam/$prevImage" "ftp/"
     exit;
    fi
 fi
 
-rm "cam/$file2Image"
+rm "cam/$prevImage"
+
+fi
 
 
