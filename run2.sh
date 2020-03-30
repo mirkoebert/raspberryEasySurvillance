@@ -1,8 +1,8 @@
 #!/bin/dash
 #set -x
 if [ ! -z "$1" ]
-  then
-    sleep $1
+then
+	sleep $1
 fi
 cd '/home/pi/raspberryEasySurvillance'
 
@@ -18,28 +18,25 @@ latestNImage="blur/$DATE.mpc"
 convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE $latestNImage
 
 if [ ! -z "$prevImage" ]; then
+	file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
+	val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null: 2>&1)
 
-file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
-val=$(compare  -fuzz 10% -metric AE $file2 $latestNImage null: 2>&1)
-
-file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
-rm "$file2" "$file2Cache"
+	file2Cache=`ls -r blur/*.cache | head -n 2 | tail -n 1`
+	rm "$file2" "$file2Cache"
 
 
-if [ "$val" -gt 1000 ]; then
-   FILE=stateMotionDected
-   if test -f "$FILE"; then
-    rm "$FILE"
-   else
-    touch $FILE 
-    cp "cam/$DATE" "ftp/"
-    mv "cam/$prevImage" "ftp/"
-    exit;
-   fi
-fi
-
-rm "cam/$prevImage"
-
+	if [ "$val" -gt 1000 ]; then
+		FILE=stateMotionDected
+		if test -f "$FILE"; then
+			rm "$FILE"
+		else
+			touch $FILE 
+			cp "cam/$DATE" "ftp/"
+			mv "cam/$prevImage" "ftp/"
+			exit;
+		fi
+	fi
+	rm "cam/$prevImage"
 fi
 
 
