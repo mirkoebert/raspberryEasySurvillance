@@ -16,9 +16,12 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Case: TODO
 
 ## Install
+* Ensure that the camera is active
+  * https://raspberrypi.stackexchange.com/questions/81753/camera-module-not-getting-detected/116338#116338
 * Install all dependencies
   * `apt-get install -y imagemagic`
   * Image Magic
+  * FTP for uploading images
 
 ## Run 
 ### Run Manually
@@ -38,6 +41,9 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 ## Performance
 #### Raspberry Zero W
 * Better take a Raspberry Pi 4 or better
+* Take a photo and process it:  8.4 sec
+
+### History 
 * Set time out to 1: 9 sec / image
 * Reducing blur: 14 sec / image
 * Optimize normalization, reduce colorspace, use faster image format: 23 seconds / image
