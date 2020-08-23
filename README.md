@@ -6,6 +6,8 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * 1 MP resolution
 * No hidden backdoors, using only standard software
 * Resistant against Deauth WIFI attac
+* Run as system deamon
+* Uploading images to FRP server
 
 ## Hardware
 * Rsaperry Pi 
@@ -16,12 +18,18 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Case: TODO
 
 ## Install
+* Checkout this git repo
+* Run `install.sh`to install all needed software
+  * imagemagick
+  * lftp
+
+## Setup
+
+
+## Troubleshooting
 * Ensure that the camera is active
   * https://raspberrypi.stackexchange.com/questions/81753/camera-module-not-getting-detected/116338#116338
-* Install all dependencies
-  * `apt-get install -y imagemagic`
-  * Image Magic
-  * FTP for uploading images
+
 
 ## Run 
 ### Run Manually
