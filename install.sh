@@ -1,7 +1,8 @@
-#!/bin/dash
+#!/bin/bash
 #set -x
 
 #run scripts with sudo
+if [[ `id -u` -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
 echo "Install software dependencies"
 apt-get --yes install imagemagick tree ftp
