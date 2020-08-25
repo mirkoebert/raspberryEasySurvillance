@@ -34,7 +34,7 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
-			curl -n /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
+			curl --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 			rm ftp/$prevImage
 			exit;
 		fi
