@@ -1,6 +1,7 @@
 #!/bin/bash
 #set -x
 . ./config
+cd $RES_HOME
 
 prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
