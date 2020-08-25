@@ -17,6 +17,15 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Power supply: TODO
 * Case: TODO
 
+## Costs
+* Raspberry Zero W:    20 Euro
+* Micro SD Card 64GB:   8 Euro
+* USB Power Adapeter: 
+* Micro USB Cable:      1 Euro
+* Case:                12 Euro
+* Total:               41 Euro
+
+
 ## Install
 * Checkout this git repo
 * Run `install.sh`to install all needed software
@@ -67,6 +76,6 @@ Run as deamon:
 ## Links
 * [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
 * [Achieving high frame rate with a Raspberry Pi camera system](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
-*
+* [Curl netrc](https://ec.haxx.se/usingcurl/usingcurl-netrc)
 
 
