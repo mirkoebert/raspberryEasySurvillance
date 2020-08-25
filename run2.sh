@@ -5,7 +5,7 @@ then
 	sleep $1
 fi
 cd '/home/pi/raspberryEasySurvillance'
-
+. config
 prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
 
@@ -34,7 +34,7 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			lftp -e "put -O / ftp/$prevImage ; bye"  $FTP_SERVER_RECORDINGS
-			# rm ftp/$prevImage
+			rm ftp/$prevImage
 			exit;
 		fi
 	fi

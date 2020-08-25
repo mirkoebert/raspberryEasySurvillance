@@ -1,0 +1,9 @@
+##############################################
+#
+# RaspberryEasySurvillance Configuartion
+#
+##############################################
+
+# FTP upload server
+# if unset, images stored localy
+FTP_SERVER_RECORDINGS=nas1.local
