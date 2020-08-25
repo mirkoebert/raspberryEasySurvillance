@@ -5,7 +5,7 @@ then
 	sleep $1
 fi
 cd '/home/pi/raspberryEasySurvillance'
-. config
+. ./config
 prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
 
