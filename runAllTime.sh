@@ -1,7 +1,7 @@
 #!/bin/dash
 #set -x
-
-cd /home/pi/raspberryEasySurvillance
+. config
+cd $WORKING_DIR
 
 # clean up
 rm -f stateMotionDected
@@ -12,3 +12,4 @@ rm -r ftp/*.*
 while true; do
   ./run2.sh
 done
+

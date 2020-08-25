@@ -7,3 +7,9 @@
 # FTP upload server
 # if unset, images stored localy
 FTP_SERVER_RECORDINGS=nas1.local
+
+
+# Installation dir
+# mandantory
+WORKING_DIR='/home/pi/raspberryEasySurvillance'
+

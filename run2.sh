@@ -1,11 +1,7 @@
 #!/bin/bash
 #set -x
-if [ ! -z "$1" ]
-then
-	sleep $1
-fi
-cd '/home/pi/raspberryEasySurvillance'
 . ./config
+
 prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
 
@@ -34,7 +30,7 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
-			curl --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
+			curl -q --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 			rm ftp/$prevImage
 			exit;
 		fi

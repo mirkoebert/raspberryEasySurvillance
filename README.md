@@ -21,10 +21,12 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Checkout this git repo
 * Run `install.sh`to install all needed software
   * imagemagick
-  * lftp
 
 ## Setup
-
+* configure FTP credentoials in .netrc
+* configure config file
+  * set working dir
+  * set FTP server name
 
 ## Troubleshooting
 * Ensure that the camera is active
@@ -34,17 +36,14 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 ## Run 
 ### Run Manually
 ### Run Automatically
-* Add run.sh to cron
-  * `crontab -e`
-```
-* * * * * /home/pi/raspberryEasySurvillance/run.sh 0
-* * * * * /home/pi/raspberryEasySurvillance/run.sh 27 
-```
-
+Run as deamon:
+* sudo systemctl start survillancecam.service
+ 
 ## Who it works.
 * Take a Photo
 * Normaize Image
 * Compare last two normalized imges
+* Upload image to FTP server
 
 ## Performance
 #### Raspberry Zero W
