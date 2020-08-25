@@ -9,7 +9,3 @@
 FTP_SERVER_RECORDINGS=nas1.local
 
 
-# Installation dir
-# mandantory
-RES_HOME=/home/pi/raspberryEasySurvillance
-

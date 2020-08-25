@@ -1,7 +1,6 @@
 #!/bin/dash
 #set -x
-. config
-cd $RES_HOMER
+cd /home/pi/raspberryEasySurvillance 
 
 # clean up
 rm -f stateMotionDected
