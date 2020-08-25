@@ -33,7 +33,7 @@ if [ ! -z "$prevImage" ]; then
 			touch $FILE 
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
-			lftp -e 'put -O / ftp/$prevImage ; bye'  $FTP_SERVER_RECORDINGS
+			lftp -e /"put -O / ftp/$prevImage ; bye /"  $FTP_SERVER_RECORDINGS
 			rm ftp/$prevImage
 			exit;
 		fi
