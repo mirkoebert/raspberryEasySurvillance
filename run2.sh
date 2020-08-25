@@ -6,7 +6,7 @@ prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
 
 DATE=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
-raspistill --width 1296 --height 972 --timeout 1  --nopreview --quality 20  -o cam/$DATE
+raspistill --width 1296 --height 972 --timeout 1  --nopreview --quality 15  -o cam/$DATE
 
 
 
