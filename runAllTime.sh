@@ -1,7 +1,7 @@
 #!/bin/dash
 #set -x
 . config
-cd $WORKING_DIR
+cd $RES_DIR
 
 # clean up
 rm -f stateMotionDected
