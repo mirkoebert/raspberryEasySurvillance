@@ -34,8 +34,7 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
-			curl -n -q -T "ftp/$ftpCompatibleFileNAme" "$FTP_SERVER_RECORDINGS"
-			#lftp -e "put -O / ftp/$prevImage ; bye "  ftp://$FTP_SERVER_RECORDINGS
+			curl -n  -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 			rm ftp/$prevImage
 			exit;
 		fi
