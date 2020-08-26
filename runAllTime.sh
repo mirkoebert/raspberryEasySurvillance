@@ -9,6 +9,6 @@ rm -f blur/*.*
 rm -r ftp/*.*
 
 while true; do
-  ./run2.sh
+  ./runOnce.sh
 done
 

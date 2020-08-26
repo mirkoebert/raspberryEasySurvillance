@@ -18,12 +18,13 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 * Case: TODO
 
 ## Costs
-* Raspberry Zero W:    20 Euro
-* Micro SD Card 64GB:   8 Euro
+* Raspberry Zero W:    10 Euro
+* Cam                  16 Euro
+* Micro SD Card 16GB:   4 Euro
 * USB Power Adapeter: 
 * Micro USB Cable:      1 Euro
 * Case:                12 Euro
-* Total:               41 Euro
+* Total:               43 Euro
 
 
 ## Install

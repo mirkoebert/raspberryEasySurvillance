@@ -2,6 +2,15 @@
 #set -x
 . ./config
 
+sendToFtpServer(){
+	if [ -n "$FTP_SERVER_RECORDINGS" ]; then
+		ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
+		curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
+	fi
+}
+
+
+
 prevImage=`ls -r cam/ | head -n 1`
 camid=`hostname`
 
@@ -29,8 +38,9 @@ if [ ! -z "$prevImage" ]; then
 			touch $FILE 
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
-			ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
-			curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
+			sendToFtpServer
+			#ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
+			#curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 			rm ftp/$prevImage
 			exit;
 		fi
