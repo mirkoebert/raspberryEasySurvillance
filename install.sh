@@ -14,7 +14,7 @@ echo "Enable Service at System Start"
 echo 
 echo sudo systemctl enable survillancecam.service
 echo
-echo "Star" Service"
+echo "Start" Service"
 echo
 echo "sudo systemctl start survillancecam.service"
 echo 

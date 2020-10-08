@@ -1,13 +1,14 @@
 # raspberryEasySurvillance
-Easy Survillance Camera Software for Raspberry Pi Zero W
+Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source Linux Onboard Software. 
 
 ## Features
 * Runs on every Raspberry Pi
 * 1 MP resolution
-* No hidden backdoors, using only standard software
+* No hidden backdoors, using only Linux standard software
 * Resistant against Deauth WIFI attac
 * Run as system deamon
-* Uploading images to FRP server
+* Motion Detection
+* Uploading images to FTP server
 
 ## Hardware
 * Rsaperry Pi 
@@ -28,7 +29,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 
 
 ## Install
-* Checkout this git repo
+* Checkout this GIT repo
 * Run `install.sh`to install all needed software
   * imagemagick
 
@@ -47,13 +48,13 @@ Easy Survillance Camera Software for Raspberry Pi Zero W
 ### Run Manually
 ### Run Automatically
 Run as deamon:
-* sudo systemctl start survillancecam.service
+* `sudo systemctl start survillancecam.service`
  
 ## Who it works.
 * Take a Photo
 * Normaize Image
-* Compare last two normalized imges
-* Upload image to FTP server
+* Compare last two normalized images
+* If motion is detected, Upload image to FTP server
 
 ## Performance
 #### Raspberry Zero W
