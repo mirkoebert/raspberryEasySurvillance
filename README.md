@@ -29,9 +29,12 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 
 
 ## Install
-* Checkout this GIT repo
-* Run `install.sh`to install all needed software
-  * imagemagick
+* Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
+* `cd raspberryEasySurvillance`
+* Activate Cam running in terminal: `sudo raspi-config`
+* Run `install.sh` to install all needed software
+* Check `sudo systemctl status survillancecam.service`
+
 
 ## Setup
 * configure FTP credentoials in .netrc
