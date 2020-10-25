@@ -12,7 +12,11 @@ cp survillancecam.service /etc/systemd/system/
 
 echo "Enable Service at System Start"
 echo 
-echo "  sudo systemctl enable survillancecam.service"
+sudo systemctl enable survillancecam.service
 echo
-
+echo "Start Service at System Start"
+sudo systemctl start survillancecam.service
+echo
+echo "Check Service is running"
+sudo systemctl status survillancecam.service
 
