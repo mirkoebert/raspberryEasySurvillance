@@ -5,7 +5,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Runs on every Raspberry Pi
 * 1 MP resolution
 * No hidden backdoors, using only Linux standard software
-* Resistant against Deauth WIFI attac
+* Resistant against **Deauth WIFI attac**
 * Run as system deamon
 * Motion Detection
 * Uploading images to FTP server
@@ -24,19 +24,20 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Micro SD Card 16GB:   4 Euro
 * USB Power Adapeter:   5 Euro 
 * Case:                12 Euro
-* Total:               47 Euro
+* **Total:               47 Euro**
 
 
 ## Install
 * Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
 * `cd raspberryEasySurvillance`
 * Run `sudo ./install.sh` to install all needed software
-* Activate Cam running in terminal: `sudo raspi-config`
+* Activate Raspberry Cam running in terminal: `sudo raspi-config`
+* Configure this software `./config.sh`
 * Check `sudo systemctl status survillancecam.service`
 
 
-## Setup
-* configure FTP credentoials in .netrc
+## Manuell Setup
+* configure FTP credentials in ~/.netrc
 * configure config file
   * set working dir
   * set FTP server name
