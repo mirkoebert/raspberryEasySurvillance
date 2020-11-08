@@ -10,7 +10,7 @@ MENU="Choose one of the following options:"
 
 
 server="nas1.local"
-password=""
+password="geheim23"
 user="camUser2"
 
 # open fd
@@ -33,4 +33,17 @@ exec 3>&-
 # display values just entered
 echo "$VALUES"
 
+i=0
+while read -r line; do
+   ((i++))
+   declare var$i="${line}"
+done <<< "${VALUES}"
+
+
+if [ -n "$VALUES" ]; then
+    echo "Write ~/.netrc"
+    echo "machine $var2 login $var1  password $var3 " > ~/.netrc
+else
+    echo "empty"
+fi
 
