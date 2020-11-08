@@ -1,4 +1,16 @@
 #!/bin/bash
+##################################################################
+# This script execute the whole ceycle one time
+# 
+# 1 - read name from last imgae
+# 2 - take a phote with raspberry cam
+# 3 - normalize new image
+# 4 - compare current image with the last image - motion detection
+# 5 - handle motion detection
+#
+##################################################################
+
+
 #set -x
 . ./config
 
@@ -39,8 +51,6 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			sendToFtpServer
-			#ftpCompatibleFileNAme=`echo $prevImage | sed -e 's/:/\\:/g'`
-			#curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 			rm ftp/$prevImage
 			exit;
 		fi
