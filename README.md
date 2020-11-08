@@ -12,27 +12,26 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 
 ## Hardware
 * Rsaperry Pi 
-  * Zero W
+  * Zero W or
   * Raspberry Pi 4
 * Cam Module (without IR filter)
-* Power supply: TODO
-* Case: TODO
+* Power supply
+* Case
 
 ## Costs
 * Raspberry Zero W:    10 Euro
 * Cam                  16 Euro
 * Micro SD Card 16GB:   4 Euro
-* USB Power Adapeter: 
-* Micro USB Cable:      1 Euro
+* USB Power Adapeter:   5 Euro 
 * Case:                12 Euro
-* Total:               43 Euro
+* Total:               47 Euro
 
 
 ## Install
 * Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
 * `cd raspberryEasySurvillance`
-* Activate Cam running in terminal: `sudo raspi-config`
 * Run `sudo ./install.sh` to install all needed software
+* Activate Cam running in terminal: `sudo raspi-config`
 * Check `sudo systemctl status survillancecam.service`
 
 
