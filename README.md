@@ -9,6 +9,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Run as system deamon
 * Motion Detection
 * Uploading images to FTP server
+* Http: show last snapshot http://raspberrypiCam1.local:8080/snapshot.jpg
 
 ## Hardware
 * Rsaperry Pi 
@@ -53,7 +54,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 Run as deamon:
 * `sudo systemctl start survillancecam.service`
  
-## Who it works.
+## How it works
 * Take a Photo
 * Normaize Image
 * Compare last two normalized images
