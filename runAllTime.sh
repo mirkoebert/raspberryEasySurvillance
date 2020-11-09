@@ -1,6 +1,6 @@
 #!/bin/dash
 #set -x
-cd /home/pi/raspberryEasySurvillance 
+cd /home/pi/raspberryEasySurvillance || exit 1
 
 # clean up
 rm -f stateMotionDected
