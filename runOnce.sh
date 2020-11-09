@@ -24,15 +24,15 @@ sendToFtpServer(){
 
 
 prevImage=`ls -r cam/ | head -n 1`
-camid=`hostname`
+camid=$(hostname)
 
 DATE=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
-raspistill --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o cam/$DATE
+raspistill --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$DATE"
 
 
 
 latestNImage="blur/$DATE.mpc"
-convert -colorspace LinearGray -normalize -blur 2x2  cam/$DATE $latestNImage
+convert -colorspace LinearGray -normalize -blur 2x2  "cam/$DATE" "$latestNImage"
 
 if [ ! -z "$prevImage" ]; then
 	file2=`ls -r blur/*.mpc | head -n 2 | tail -n 1`
@@ -51,7 +51,7 @@ if [ ! -z "$prevImage" ]; then
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			sendToFtpServer
-			rm ftp/$prevImage
+			rm "ftp/$prevImage"
 			exit;
 		fi
 	fi
