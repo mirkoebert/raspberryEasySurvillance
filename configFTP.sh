@@ -1,12 +1,9 @@
 #!/bin/bash
 #set -x
 
-HEIGHT=20
-WIDTH=80
-CHOICE_HEIGHT=4
 BACKTITLE="raspberryEasySurvillance"
 TITLE="Configuration FTP"
-MENU="Choose one of the following options:"
+MENU="Choose one of the following options: "
 
 
 server="nas1.local"
@@ -42,7 +39,7 @@ done <<< "${VALUES}"
 
 if [ -n "$VALUES" ]; then
     echo "Write ~/.netrc"
-    echo "machine $var2 login $var1  password $var3 " > ~/.netrc
+    echo machine "$var2" login "$var1"  password "$var3"  > ~/.netrc
 else
     echo "empty"
 fi
