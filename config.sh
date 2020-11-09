@@ -10,8 +10,9 @@ MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Install Sofware and Start Demon"
          2 "Configure FTP Image Upload - write .netrc"
-         3 "Configure HTTP Motion Detection Trigger"
- 	 4 "Exit")
+         3 "Start Http deamon"
+	 4 "Kill Httpm deamon"
+ 	 5 "Exit")
 
 
 while true
@@ -33,9 +34,12 @@ case $CHOICE in
             ./configureFTP.sh
             ;;
         3)
-            ./configureHttpTrigger.sh
+            ./startHttpd.sh
             ;;
         4)
+            pkill busybox
+            ;;
+        5)
             exit
             ;;
 esac
