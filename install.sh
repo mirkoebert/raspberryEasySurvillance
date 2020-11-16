@@ -5,7 +5,7 @@
 if [[ `id -u` -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
 
 echo "Install software dependencies"
-apt-get --yes install imagemagick tree lftp boxes
+apt-get --yes install imagemagick tree lftp boxes dialog
 
 echo "Configure Service" | boxes -d boy -ac
 cp survillancecam.service /etc/systemd/system/
