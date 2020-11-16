@@ -11,7 +11,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Install Sofware and Start Demon"
          2 "Configure FTP Image Upload - write .netrc"
          3 "Start Http deamon"
-	 4 "Kill Httpm deamon"
+	 4 "Kill Http deamon"
  	 5 "Exit")
 
 
