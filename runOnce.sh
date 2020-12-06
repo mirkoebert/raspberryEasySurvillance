@@ -28,7 +28,7 @@ camid=$(hostname)
 
 DATE=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
 raspistill --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$DATE"
-cp "cam/$DATE" www/snapshot.jpg
+cp "cam/$DATE" /var/www/html/snapshot.jpg
 
 
 latestNImage="blur/$DATE.mpc"
