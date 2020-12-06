@@ -5,7 +5,16 @@
 if [[ `id -u` -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
 
 echo "Install software dependencies"
-apt-get --yes install imagemagick tree lftp boxes dialog
+apt-get --yes install imagemagick tree lftp lighttpd  boxes dialog
+
+
+echo "Setup lighttpd"
+sudo groupadd www-data
+sudo usermod -G www-data -a pi
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 775 /var/www/html
+sudo service lighttpd force-reload
+
 
 echo "Configure Service" | boxes -d boy -ac
 cp survillancecam.service /etc/systemd/system/
