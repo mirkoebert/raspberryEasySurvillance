@@ -47,6 +47,7 @@ if [ -n "$prevImage" ]; then
 		if test -f "$FILE"; then
 			rm "$FILE"
 		else
+			./reconnectWifi.sh
 			touch $FILE 
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
