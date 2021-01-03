@@ -36,16 +36,16 @@ convert -colorspace LinearGray -normalize -blur 2x2  "cam/$DATE" "$latestNImage"
 if [ -n "$prevImage" ]; then
 	file2=$(ls -r blur/*.mpc | head -n 2 | tail -n 1)
 	val=$(compare  -fuzz 10% -metric AE "$file2" "$latestNImage" null: 2>&1)
-        val=$(printf '%.0f' "$val")
+	val=$(printf '%.0f' "$val")
 	file2Cache=$(ls -r blur/*.cache | head -n 2 | tail -n 1)
 	rm -f "$file2" "$file2Cache"
 
 
 	if [ "$val" -gt 1000 ]; then
-			./src/reconnectWifi.sh
-			cp "cam/$DATE" "ftp/"
-			sendToFtpServer
-			rm -f "ftp/$DATE"
+		./src/reconnectWifi.sh
+		cp "cam/$DATE" "ftp/"
+		sendToFtpServer
+		rm -f "ftp/$DATE"
 	fi
 	rm -f "cam/$prevImage"
 fi
