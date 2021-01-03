@@ -3,7 +3,7 @@
 cd /home/pi/raspberryEasySurvillance || exit 1
 
 # rescue old motion images
-mkdir -p resucued
+mkdir -p rescued
 mv ftp/*.jpg rescued
 
 # clean up
