@@ -16,7 +16,7 @@
 
 sendToFtpServer(){
 	if [ -n "$FTP_SERVER_RECORDINGS" ]; then
-		ftpCompatibleFileNAme=$(echo "$prevImage" | sed -e 's/:/\\:/g')
+		ftpCompatibleFileNAme=$(echo "$DATE" | sed -e 's/:/\\:/g')
 		curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$ftpCompatibleFileNAme" "ftp://$FTP_SERVER_RECORDINGS"
 	fi
 }
@@ -43,18 +43,10 @@ if [ -n "$prevImage" ]; then
 
 
 	if [ "$val" -gt 1000 ]; then
-		FILE=stateMotionDected
-		if test -f "$FILE"; then
-			rm -f "$FILE"
-		else
 			./reconnectWifi.sh
-			touch $FILE 
 			cp "cam/$DATE" "ftp/"
-			mv "cam/$prevImage" "ftp/"
 			sendToFtpServer
-			rm -f "ftp/$prevImage"
-			exit;
-		fi
+			rm -f "ftp/$DATE"
 	fi
 	rm -f "cam/$prevImage"
 fi
