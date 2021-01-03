@@ -39,20 +39,20 @@ if [ -n "$prevImage" ]; then
 	val=$(compare  -fuzz 10% -metric AE "$file2" "$latestNImage" null: 2>&1)
         val=$(printf '%.0f' "$val")
 	file2Cache=$(ls -r blur/*.cache | head -n 2 | tail -n 1)
-	rm "$file2" "$file2Cache"
+	rm -f "$file2" "$file2Cache"
 
 
 	if [ "$val" -gt 1000 ]; then
 		FILE=stateMotionDected
 		if test -f "$FILE"; then
-			rm "$FILE"
+			rm -f "$FILE"
 		else
 			./reconnectWifi.sh
 			touch $FILE 
 			cp "cam/$DATE" "ftp/"
 			mv "cam/$prevImage" "ftp/"
 			sendToFtpServer
-			rm "ftp/$prevImage"
+			rm -f "ftp/$prevImage"
 			exit;
 		fi
 	fi
