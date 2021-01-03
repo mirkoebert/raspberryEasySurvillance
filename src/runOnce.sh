@@ -22,7 +22,7 @@ sendToFtpServer(){
 
 exitIfBlackImage(){
 	thresh=0.02 # (XX as fraction between 0 and 1)
-	mean=$(convert "cam/$(DATE)" -format "%[mean]" info:)
+	mean=$(convert "cam/$DATE" -format "%[mean]" info:)
 	meantest=$(convert xc: -format "%[fx:($mean/quantumrange)<$thresh?1:0]" info:)
 	if [ "$meantest" -eq 1 ]; then
 		rm -f "cam/$DATE"
