@@ -25,6 +25,7 @@ exitIfBlackImage(){
 	mean=$(convert "$(DATE)" -format "%[mean]" info:)
 	meantest=$(convert xc: -format "%[fx:($mean/quantumrange)<$thresh?1:0]" info:)
 	if [ "$meantest" -eq 1 ]; then
+		rm $(DATE)
 		exit
 	fi
 }
