@@ -20,6 +20,14 @@ sendToFtpServer(){
 	fi
 }
 
+exitIfBlackImage(){
+	hresh=0.02 # (XX as fraction between 0 and 1)
+	mean=$(convert "$(DATE)" -format "%[mean]" info:)
+	meantest=$(convert xc: -format "%[fx:($mean/quantumrange)<$thresh?1:0]" info:`)
+	if [ $meantest -eq 1 ]; then
+		exit
+	fi
+}
 
 
 prevImage=$(ls -r cam/ | head -n 1)
@@ -27,6 +35,7 @@ camid=$(hostname)
 
 DATE=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
 raspistill --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$DATE"
+exitIfBlackImage
 cp "cam/$DATE" /var/www/html/snapshot.jpg
 
 
