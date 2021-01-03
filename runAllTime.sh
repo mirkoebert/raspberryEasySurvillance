@@ -7,10 +7,7 @@ mkdir -p rescued
 mv ftp/*.jpg rescued
 
 # clean up
-rm -f stateMotionDected
-rm -f cam/*.*
-rm -f blur/*.*
-rm -r ftp/*.*
+./cleanupDirs.sh
 
 while true; do
   ./runOnce.sh
