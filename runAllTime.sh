@@ -7,7 +7,7 @@ mkdir -p rescued
 mv ftp/*.jpg rescued
 
 # clean up
-./src/cleanupDirs.sh
+./src/cleanUpDirs.sh
 
 while true; do
   ./src/runOnce.sh
