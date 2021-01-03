@@ -3,7 +3,7 @@
 
 HEIGHT=20
 WIDTH=80
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=5
 BACKTITLE="raspberryEasySurvillance"
 TITLE="Configuration"
 MENU="Choose one of the following options:"
