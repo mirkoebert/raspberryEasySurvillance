@@ -56,7 +56,7 @@ if [ -n "$prevImage" ]; then
 			exit;
 		fi
 	fi
-	rm "cam/$prevImage"
+	rm -f "cam/$prevImage"
 fi
 
 
