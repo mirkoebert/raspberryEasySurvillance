@@ -5,11 +5,13 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Runs on every Raspberry Pi
 * 1 MP resolution
 * No hidden backdoors, using only Linux standard software
+* No Spyware: Alexa, Siri, ...
 * Resistant against **Deauth WIFI attac**
 * Run as system deamon
 * Motion Detection
 * Uploading images to FTP server
-* Http: show last snapshot http://raspberrypiCam1.local:8080/snapshot.jpg
+* Http: show last snapshot http://raspberrypiCam1.local/snapshot.jpg
+
 
 ## Hardware
 * Rsaperry Pi 
