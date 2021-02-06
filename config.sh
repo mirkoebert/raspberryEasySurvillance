@@ -34,7 +34,7 @@ case $CHOICE in
             ./configureFTP.sh
             ;;
         3)
-            ./startHttpd.sh
+            .src/config/startHttpd.sh
             ;;
         4)
             pkill busybox

@@ -15,7 +15,7 @@ sudo chown -R www-data:www-data /var/www/html
 sudo chmod -R 775 /var/www/html
 sudo service lighttpd force-reload
 
-echo "Server Setup: Disable WIFI Power Saving"
+echo "Server Mode Setup: Disable WIFI Power Saving"
 sudo iwconfig wlan0 power off
 sudo echo "wireless-power off"  >> /etc/network/interfaces
 
