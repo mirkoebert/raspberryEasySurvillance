@@ -31,4 +31,7 @@ sudo systemctl start survillancecam.service
 echo
 echo "Check Service is running"
 sudo systemctl status survillancecam.service
+echo
+echo "Run ./config.sh to configure the software"
+echo
 
