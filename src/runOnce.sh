@@ -2,8 +2,8 @@
 ##################################################################
 # This script execute the whole ceycle one time
 # 
-# 1 - read name from last imgae
-# 2 - take a phote with raspberry cam
+# 1 - read name from last image
+# 2 - take a photo with raspberry's cam
 # 3 - normalize new image
 # 4 - compare current image with the last image - motion detection
 # 5 - handle motion detection
