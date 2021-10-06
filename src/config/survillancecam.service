@@ -1,0 +1,10 @@
+[Unit]
+Description=Survillance Cam
+
+[Service]
+ExecStart=/home/pi/raspberryEasySurvillance/runAllTime.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target 
+

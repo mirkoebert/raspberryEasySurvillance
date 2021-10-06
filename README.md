@@ -30,6 +30,23 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * **Total:               47 Euro**
 
 
+## Prepare
+* Get latest Imager: **https://www.raspberrypi.org/software/**
+* Flash image: **Raspberry Pi OS lite**
+* Press **control + shift * x** to open the advaced menu
+  * there you can change the computer name
+  * enable ssh
+  * cofigure ssh
+  * configure WIFI
+* start the raspberry and login via ssh
+* upgrade all software
+* install git
+* disable energy saving
+  * vi **/etc/network/interfaces**
+pre-up iw dev wlan0 set power_save off
+post-down iw dev wlan0 set power_save on
+
+
 ## Install
 * Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
 * `cd raspberryEasySurvillance`
