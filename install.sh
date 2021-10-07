@@ -5,8 +5,10 @@
 if [[ `id -u` -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
 
 echo "Install software dependencies"
-apt-get --yes install imagemagick tree lftp lighttpd  boxes dialog
+apt-get --yes install imagemagick tree lftp lighttpd  boxes dialog unattended-upgrades 
 
+echo "Enable automatic installation of security updates"
+sudo dpkg-reconfigure -plow unattended-upgrades
 
 echo "Setup lighttpd"
 sudo groupadd www-data
@@ -18,6 +20,9 @@ sudo service lighttpd force-reload
 echo "Server Mode Setup: Disable WIFI Power Saving"
 sudo iwconfig wlan0 power off
 sudo echo "wireless-power off"  >> /etc/network/interfaces
+
+echo "Disable unneeded components"
+sudo /opt/vc/bin/tvservice -o
 
 echo "Configure Service" | boxes -d boy -ac
 cp ./src/config/survillancecam.service /etc/systemd/system/

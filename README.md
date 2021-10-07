@@ -41,6 +41,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * start the raspberry and login via ssh
 * upgrade all software
 * install git
+* Enable rasperyy cam: **sudo raspi-config**
 * disable energy saving
   * vi **/etc/network/interfaces**
 pre-up iw dev wlan0 set power_save off
