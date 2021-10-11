@@ -1,6 +1,6 @@
 #!/bin/bash
 ##################################################################
-# This script execute the whole ceycle one time
+# This script execute the whole cycle one time
 # 
 # 1 - read name from last image
 # 2 - take a photo with raspberry's cam
