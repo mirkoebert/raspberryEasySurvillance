@@ -10,9 +10,7 @@ ping -c2 ${SERVER} > /dev/null
 # If the return code from ping ($?) is not 0 (meaning there was an error)
 if [ $? != 0 ]
 then
-    logger "Restart the wireless interface"
-    ifdown --force wlan0
-    sleep 5
-    ifup --force wlan0
+    logger "Network unreachable - Restart computer"
+    sudo reboot
 fi
 
