@@ -19,7 +19,7 @@ set -e
 cat /proc/cpuinfo | grep Model
 
 #run scripts with sudo
-if [[ `id -u` -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
+if [[ $(id -u) -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
 
 str="Install software dependencies"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
@@ -52,7 +52,7 @@ str="Disable unneeded components"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 /opt/vc/bin/tvservice -o
 
-str="Configure Service" | boxes -d boy -ac
+str="Configure Service"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 cp ./src/config/survillancecam.service /etc/systemd/system/
 
@@ -68,6 +68,6 @@ str="Check Service is running"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 systemctl status survillancecam.service
 
-echo "Run ./config.sh to configure the software" | boxes
+echo "Run ./config.sh to configure the software" | boxes -boy -ac
 
 
