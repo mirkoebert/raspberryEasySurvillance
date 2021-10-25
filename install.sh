@@ -16,10 +16,10 @@ set -e
     OVER="\\r\\033[K"
 
 
-cat /proc/cpuinfo | grep Model
-
 #run scripts with sudo
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run this script as root" ; exit 1 ; fi
+
+grep Model /proc/cpuinfo 
 
 str="Install software dependencies"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
