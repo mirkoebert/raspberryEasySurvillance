@@ -33,7 +33,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 ## Prepare
 * Get latest Imager: **https://www.raspberrypi.org/software/**
 * Flash image: **Raspberry Pi OS lite**
-* Press **control + shift * x** to open the advaced menu
+* Configure:
   * there you can change the computer name
   * enable ssh
   * cofigure ssh
