@@ -63,6 +63,9 @@ post-down iw dev wlan0 set power_save on
   * set working dir
   * set FTP server name
 
+## Check
+* try to get a picutre from the cam: http://your-cam-name/snapshot.jpg
+
 ## Troubleshooting
 * Ensure that the camera is active
   * https://raspberrypi.stackexchange.com/questions/81753/camera-module-not-getting-detected/116338#116338
