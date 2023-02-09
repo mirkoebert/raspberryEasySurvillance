@@ -4,12 +4,12 @@
 ##################################################################
 
 
-set -x
+#set -x
 . ./config
 
 sendToFtpServer(){
 	if [ -n "$FTP_SERVER_RECORDINGS" ]; then
-		curl -q -sS --netrc-file /home/pi/.netrc -T "$1" "ftp://$FTP_SERVER_RECORDINGS"
+		curl -q -sS --netrc-file /home/pi/.netrc --upload-file "$1" "ftp://$FTP_SERVER_RECORDINGS"
 	fi
 }
 

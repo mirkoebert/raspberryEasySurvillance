@@ -12,13 +12,8 @@
 
 
 #set -x
-. ./config
+. ./src/send2FTP.sh
 
-sendToFtpServer(){
-	if [ -n "$FTP_SERVER_RECORDINGS" ]; then
-		curl -q -sS --netrc-file /home/pi/.netrc -T "ftp/$DATE" "ftp://$FTP_SERVER_RECORDINGS"
-	fi
-}
 
 exitIfBlackImage(){
 	thresh=0.02 # (XX as fraction between 0 and 1)
@@ -54,7 +49,7 @@ if [ -n "$prevImage" ]; then
 	if [ "$val" -gt 1000 ]; then
 		./src/reconnectWifi.sh
 		cp "cam/$DATE" "ftp/"
-		sendToFtpServer
+		sendToFtpServer "ftp/$DATE"
 		rm -f "ftp/$DATE"
 	fi
 	rm -f "cam/$prevImage"
