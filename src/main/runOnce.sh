@@ -12,7 +12,7 @@
 
 
 #set -x
-. ./src/send2FTP.sh
+. ./src/main/send2FTP.sh
 
 
 exitIfBlackImage(){
@@ -25,13 +25,14 @@ exitIfBlackImage(){
 	fi
 }
 
-
+# TODO use global vars for file names
 prevImage=$(ls -r cam/ | head -n 1)
 camid=$(hostname)
 
 DATE=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
-raspistill --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$DATE"
+rpicam-still --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$DATE"
 exitIfBlackImage
+
 cp "cam/$DATE" /var/www/html/snapshot.jpg
 
 
@@ -54,5 +55,3 @@ if [ -n "$prevImage" ]; then
 	fi
 	rm -f "cam/$prevImage"
 fi
-
-

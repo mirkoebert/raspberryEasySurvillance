@@ -45,6 +45,7 @@ if [ -n "$VALUES" ]; then
     replace="FTP_SERVER_RECORDINGS=$var2"
     sed -i'.backup' "s+${find}+${replace}+g" config
 else
-    echo "empty"
+  # TODO use logger
+    echo "WARN: No values given for configuration."
 fi
 
