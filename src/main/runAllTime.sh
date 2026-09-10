@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/bash
 #set -x
 cd /home/pi/raspberryEasySurvillance || exit 1
 

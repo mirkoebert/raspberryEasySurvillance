@@ -48,7 +48,7 @@ if [ -n "$prevImage" ]; then
 
 
 	if [ "$val" -gt 1000 ]; then
-		./src/reconnectWifi.sh
+		./src/main/reconnectWifi.sh
 		cp "cam/$DATE" "ftp/"
 		sendToFtpServer "ftp/$DATE"
 		rm -f "ftp/$DATE"

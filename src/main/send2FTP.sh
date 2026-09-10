@@ -5,7 +5,7 @@
 
 
 #set -x
-. ./config
+. ./arc/install/config # TODO myabe move to better fitting dir
 
 sendToFtpServer(){
 	if [ -n "$FTP_SERVER_RECORDINGS" ]; then

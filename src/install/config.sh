@@ -31,10 +31,10 @@ case $CHOICE in
             sudo ./install.sh
             ;;
         2)
-            ./configureFTP.sh
+            ./install/configureFTP.sh
             ;;
         3)
-            .src/config/startHttpd.sh
+            ./src/config/startHttpd.sh
             ;;
         4)
             pkill busybox
@@ -45,4 +45,3 @@ case $CHOICE in
 esac
 
 done
-
