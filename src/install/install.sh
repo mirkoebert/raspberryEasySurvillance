@@ -59,7 +59,7 @@ if  isRaspberry ; then
 
 	str="Install PHP and enable CGI"
 	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
-	apt install php-cgi
+	apt-get --yes install php-cgi
 	lighty-enable-mod fastcgi-php
 
 	str="Server Mode Setup: Disable WIFI Power Saving"
@@ -67,13 +67,14 @@ if  isRaspberry ; then
 	iwconfig wlan0 power off
 	echo "wireless-power off"  >> /etc/network/interfaces
 
-	str="Disable unneeded components"
-	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
-	/opt/vc/bin/tvservice -o
+#	str="Disable unneeded components"
+#	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
+#	/opt/vc/bin/tvservice -o
 
-	str="Configure Service"
+	str="Configure Service and reload deamon"
 	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 	cp ./src/config/survillancecam.service /etc/systemd/system/
+  systemctl daemon-reload
 
 	str="Enable Service at System Start"
 	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
