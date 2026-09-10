@@ -51,7 +51,7 @@ if  isRaspberry ; then
 
 	str="Setup lighttpd HTTP server"
 	printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
-	groupadd www-data
+	groupadd -f www-data
 	usermod -G www-data -a pi
 	chown -R www-data:www-data /var/www/html
 	chmod -R 775 /var/www/html
