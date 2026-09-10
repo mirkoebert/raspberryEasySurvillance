@@ -27,8 +27,10 @@ exitIfBlackImage(){
 
 
 camid=$(hostname)
+# TODO use global vars for file names
+prevImage=$(ls -r cam/ | head -n 1)
 
-newImageName=$(newImageName +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
+newImageName=$(date +"%Y-%m-%d_%H:%M:%S")_$camid.jpg
 rpicam-still --rotation 270 --width 1296 --height 972 --timeout 1  --nopreview --quality 12  -o "cam/$newImageName"
 exitIfBlackImage
 
@@ -39,8 +41,6 @@ cp "cam/$newImageName" /var/www/html/snapshot.jpg
 newImageNormalizedName="blur/$newImageName.mpc"
 convert -colorspace LinearGray -normalize -blur 2x2  "cam/$newImageName" "$newImageNormalizedName"
 
-# TODO use global vars for file names
-prevImage=$(ls -r cam/ | head -n 1)
 
 if [ -n "$prevImage" ]; then
 	file2=$(ls -r blur/*.mpc | head -n 2 | tail -n 1)

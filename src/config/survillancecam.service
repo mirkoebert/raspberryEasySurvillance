@@ -2,7 +2,7 @@
 Description=Survillance Cam
 
 [Service]
-ExecStart=/home/pi/srtc/main/raspberryEasySurvillance/runAllTime.sh
+ExecStart=/home/pi/raspberryEasySurvillance/src/main/runAllTime.sh
 Restart=on-failure
 
 [Install]

@@ -28,13 +28,13 @@ CHOICE=$(dialog --clear \
 clear
 case $CHOICE in
         1)
-            sudo ./install.sh
+            sudo src/install/install.sh
             ;;
         2)
-            ./install/configureFTP.sh
+            src/install/configureFTP.sh
             ;;
         3)
-            ./src/config/startHttpd.sh
+            src/config/startHttpd.sh
             ;;
         4)
             pkill busybox
