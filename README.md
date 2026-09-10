@@ -48,10 +48,10 @@ pre-up iw dev wlan0 set power_save off
 post-down iw dev wlan0 set power_save on
 
 
-## Install
+## Install on a runiing Raspberry
 * Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
 * `cd raspberryEasySurvillance`
-* Run `sudo ./install.sh` to install all needed software
+* Run `sudo src/install/install.sh` to install all needed software
 * Activate Raspberry Cam running in terminal: `sudo raspi-config`
 * Configure this software `./config.sh`
 * Check `sudo systemctl status survillancecam.service`
