@@ -12,5 +12,7 @@ if [ $? != 0 ]
 then
     logger "Network unreachable - Restart computer"
     sudo reboot
+else
+	echo 'Network is Ok'
 fi
 
