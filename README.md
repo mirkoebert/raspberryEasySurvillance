@@ -53,11 +53,11 @@ post-down iw dev wlan0 set power_save on
 * `cd raspberryEasySurvillance`
 * Run `sudo src/install/install.sh` to install all needed software
 * Activate Raspberry Cam running in terminal: `sudo raspi-config`
-* Configure this software `./config.sh`
+* Configure this software `src/install/config.sh`
 * Check `sudo systemctl status survillancecam.service`
 
 
-## Manuell Setup
+## Manual Setup
 * configure FTP credentials in ~/.netrc
 * configure config file
   * set working dir
@@ -79,7 +79,7 @@ Run as deamon:
  
 ## How it works
 * Take a Photo
-* Normaize Image
+* Normalize Image
 * Compare last two normalized images
 * If motion is detected, Upload image to FTP server
 
@@ -106,5 +106,3 @@ Run as deamon:
 * [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
 * [Achieving high frame rate with a Raspberry Pi camera system](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
 * [Curl netrc](https://ec.haxx.se/usingcurl/usingcurl-netrc)
-
-
