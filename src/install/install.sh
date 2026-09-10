@@ -24,13 +24,13 @@ grep Model /proc/cpuinfo
 str="Install software dependencies"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 apt-get update
-apt-get --yes install imagemagick tree lftp lighttpd  boxes dialog unattended-upgrades 
+apt-get --yes install imagemagick lighttpd boxes dialog unattended-upgrades 
 
 str="Enable automatic installation of security updates"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 sudo dpkg-reconfigure -plow unattended-upgrades
 
-str="Install and Setup lighttpd HTTP server"
+str="Setup lighttpd HTTP server"
 printf "%b  %b %s\\n" "${OVER}" "${TICK}" "${str}"
 groupadd www-data
 usermod -G www-data -a pi
