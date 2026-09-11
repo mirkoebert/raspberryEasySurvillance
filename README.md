@@ -21,11 +21,11 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Power supply
 * Case
 
-## Costs (2023)
+## Costs (2020)
 * Raspberry Zero W:    10 Euro
 * Raspberry Cam Modul  16 Euro
 * Micro SD Card 16GB:   4 Euro
-* USB Power Adapeter:   5 Euro 
+* USB Power Adapter:    5 Euro 
 * Case:                12 Euro
 * **Total:               47 Euro**
 
@@ -91,7 +91,7 @@ Run as deamon:
 ### History 
 * Set time out to 1: 9 sec / image
 * Reducing blur: 14 sec / image
-* Optimize normalization, reduce colorspace, use faster image format: 23 seconds / image
+* Optimize normalization, reduce color space, use faster image format: 23 seconds / image
 * Reduce Image size, One complete run takes 23 seconds / image. This mean 2 images per minute.
 * Some optimizations: 75 seconds /image
 * First try, full image resolution: 90 sec / image
