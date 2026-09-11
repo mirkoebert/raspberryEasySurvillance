@@ -21,7 +21,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Power supply
 * Case
 
-## Costs
+## Costs (2023)
 * Raspberry Zero W:    10 Euro
 * Raspberry Cam Modul  16 Euro
 * Micro SD Card 16GB:   4 Euro
@@ -36,7 +36,7 @@ Easy Survillance Camera Software for Raspberry Pi Zero W with only Open Source L
 * Configure:
   * there you can change the computer name
   * enable ssh
-  * cofigure ssh
+  * configure ssh
   * configure WIFI
 * start the raspberry and login via ssh
 * upgrade all software
@@ -48,23 +48,23 @@ pre-up iw dev wlan0 set power_save off
 post-down iw dev wlan0 set power_save on
 
 
-## Install
+## Install on a running Raspberry
 * Clone this GIT repo `git clone https://github.com/mirkoebert/raspberryEasySurvillance.git`
 * `cd raspberryEasySurvillance`
-* Run `sudo ./install.sh` to install all needed software
+* Run `sudo src/install/install.sh` to install all needed software
 * Activate Raspberry Cam running in terminal: `sudo raspi-config`
-* Configure this software `./config.sh`
+* Configure this software `src/install/config.sh`
 * Check `sudo systemctl status survillancecam.service`
 
 
-## Manuell Setup
+## Manual Setup
 * configure FTP credentials in ~/.netrc
 * configure config file
   * set working dir
   * set FTP server name
 
 ## Check
-* try to get a picutre from the cam: http://your-cam-name/snapshot.jpg
+* try to get a picture from the cam: http://your-cam-name/snapshot.jpg
 
 ## Troubleshooting
 * Ensure that the camera is active
@@ -79,7 +79,7 @@ Run as deamon:
  
 ## How it works
 * Take a Photo
-* Normaize Image
+* Normalize Image
 * Compare last two normalized images
 * If motion is detected, Upload image to FTP server
 
@@ -106,5 +106,3 @@ Run as deamon:
 * [Creator Blog](https://programming-2.blogspot.com/2019/12/einfache-bewegungserkennung-auf-dem.html)
 * [Achieving high frame rate with a Raspberry Pi camera system](https://chriscarey.com/blog/2017/04/30/achieving-high-frame-rate-with-a-raspberry-pi-camera-system/comment-page-1/)
 * [Curl netrc](https://ec.haxx.se/usingcurl/usingcurl-netrc)
-
-

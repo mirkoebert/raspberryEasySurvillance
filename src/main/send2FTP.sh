@@ -5,7 +5,7 @@
 
 
 #set -x
-. ./config
+. ./src/config/config
 
 sendToFtpServer(){
 	if [ -n "$FTP_SERVER_RECORDINGS" ]; then

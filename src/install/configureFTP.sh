@@ -40,11 +40,12 @@ done <<< "${VALUES}"
 if [ -n "$VALUES" ]; then
     echo "Write ~/.netrc"
     echo machine "$var2" login "$var1"  password "$var3"  > ~/.netrc
-    . config
+    . src/config/config
     find="FTP_SERVER_RECORDINGS=$FTP_SERVER_RECORDINGS"
     replace="FTP_SERVER_RECORDINGS=$var2"
-    sed -i'.backup' "s+${find}+${replace}+g" config
+    sed -i'.backup' "s+${find}+${replace}+g" src/config/config
 else
-    echo "empty"
+  # TODO use logger
+    echo "WARN: No values given for configuration."
 fi
 

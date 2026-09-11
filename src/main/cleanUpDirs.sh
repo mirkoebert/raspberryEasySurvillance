@@ -1,10 +1,7 @@
-#!/bin/dash
+#!/bin/bash
 #set -x
 
-# clean up
-rm -f stateMotionDected
+echo "Clean all processing dirs"
 rm -f cam/*.*
 rm -f blur/*.*
 rm -r ftp/*.*
-
-
